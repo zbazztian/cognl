@@ -28,7 +28,7 @@ jobs:
       with:
         patterns: |
           +**/*.java
-          -acio/*.java
+          -acio/**/*.java
         input: java.sarif
         output: java.sarif
 
@@ -36,5 +36,5 @@ jobs:
     - uses: github/codeql-action/upload-sarif@v1
       with:
         sarif_file: java.sarif
-        checkout_path: acio
+        checkout_path: cognl
 
