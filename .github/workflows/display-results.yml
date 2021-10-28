@@ -1,0 +1,30 @@
+name: "Display results"
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  analyze:
+    name: Display
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - uses: github/actions/upload-sarif
+      with:
+        sarif_file: java.sarif
+        checkout_path: acio
+
