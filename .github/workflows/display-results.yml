@@ -37,4 +37,3 @@ jobs:
       with:
         sarif_file: java.sarif
         checkout_path: cognl
-
